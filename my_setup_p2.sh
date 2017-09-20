@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # This script is derived from the 'setup_p2.sh' script in the fast.ai course repository.
-# I didn'y really want to create new VPCs and security groups for my p2 box so I've hacked this
+# I didn't really want to create new VPCs, security groups, and keys etc. for my p2 box so I've hacked this
 # to suit my purposes.
 # Note that this uses a different AMI image from the original, as that one wasn't available in eu-west-1(!).
 
