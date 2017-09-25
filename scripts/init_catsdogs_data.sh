@@ -34,11 +34,11 @@ mkdir -p sample/valid/dog
 # We need to split the train set into directories by class
 find $ROOT/train -name 'dog*.jpg' | xargs -I '{}' cp '{}' train/dog
 find $ROOT/train -name 'cat*.jpg' | xargs -I '{}' cp '{}' train/cat
-find $ROOT/test -name '*.jpg' | xargs -I '{}' cp '{}' test1/
+find $ROOT/test -name '*.jpg' | xargs -I '{}' cp '{}' test1/unknown
 
 # Move 1k files into the validation set
-ls train/dog | tail -n 500 | xargs -I '{}' mv $ROOT/train/'{}' valid/dog
-ls train/cat | tail -n 500 | xargs -I '{}' mv $ROOT/train/'{}' valid/cat
+find train/dog | tail -n 1250 | xargs -I '{}' mv '{}' valid/dog
+find train/cat | tail -n 1250 | xargs -I '{}' mv '{}' valid/cat
 
 # Copy files into the sample datasets
 find train/dog -name 'dog*.jpg' | head -n 50 | xargs -I '{}' cp '{}' sample/train/dog
